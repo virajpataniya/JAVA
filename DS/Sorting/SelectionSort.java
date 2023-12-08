@@ -3,6 +3,8 @@ import java.util.*;
 
 public class SelectionSort {
 
+    //Pick the smallest from unsorted array & put it at beginning
+
     public static void selectionSort(int arr[]){
         //Below loop is for turns 
         for (int i = 0; i < arr.length-1; i++) {
