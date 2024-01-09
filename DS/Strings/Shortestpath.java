@@ -1,6 +1,8 @@
 package DS.Strings;
 
-public class Shortestpath {
+import OOPS.Oops;
+
+public class Shortestpath extends Oops {
     public static void main(String[] args) {
         String path = "WNEENESENNN";
         System.out.println("Shortest path is " +getShortestPath(path));
