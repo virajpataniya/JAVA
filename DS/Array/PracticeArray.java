@@ -114,12 +114,47 @@ public class PracticeArray {
         }
     }
 
+    public static void maxArray(int[] numbers) {
+        int currSum=0, maxSum=Integer.MAX_VALUE;
+        for (int i = 0; i < numbers.length; i++) {
+            int start=i;
+            for (int j = i; j < numbers.length; j++) {
+                int end=j;
+                currSum=0;
+                for (int k = start; k <=end; k++) {
+                    //subArray sum
+                    currSum+=numbers[k];
+                }
+                System.out.println(currSum);
+                if (maxSum<currSum) {
+                    maxSum=currSum;
+                }
+            }
+        }
+        System.out.println("Max sum is "+maxSum);
+    }
+
+    //Kadanes Algorithm
+    public static void maxSubArray(int numbers[]) {
+        int currSum=0, maxSum=Integer.MIN_VALUE;
+        for (int i = 0; i < numbers.length; i++) {
+            currSum=currSum+numbers[i];
+            if (currSum<0) {
+                currSum=0;
+            }
+            maxSum=Math.max(maxSum, currSum);
+        }
+        System.out.println("Our max SubArray sum is "+ maxSum);
+    }
+
     public static void main(String[] args) {
 
         int numbers[]= {2,5,7,9};
         int key=20;
-
-        subArr(numbers);
+        int Kadanes[]={-1,-2,4,-3,-1,5,2};
+        maxSubArray(Kadanes);
+        //maxArray(numbers);
+        //subArr(numbers);
 
         //pairsArr(numbers);
         /*reverseArray(numbers);
