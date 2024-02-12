@@ -62,7 +62,17 @@ public class PracticeStrings {
         String path= "WNEENESENNN";
         String str1="pineapple", str2="papaya";
 
-        System.out.println("Largest string is "+largestString(str1, str2));
+        //Ma'am way
+        String fruits[]= {"apple","mango","banana"};
+        String largest =fruits[0];
+        for (int i = 1; i < fruits.length; i++) {
+            if (largest.compareTo(fruits[i])<0) {
+                largest=fruits[i];
+            }
+        }
+
+        System.out.println(largest);
+        //System.out.println("Largest string is "+largestString(str1, str2));
         //System.out.println(str.substring(2, 6));
         //System.out.println("Substring is "+subString(str, 2, 6));
         //System.out.println("length to reach point is "+getPath(path));
