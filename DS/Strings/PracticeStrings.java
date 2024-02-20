@@ -75,11 +75,22 @@ public class PracticeStrings {
 
     }
 
+    public static int countVowels(String str) {
+        int count=0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i)=='a'|| str.charAt(i)=='e'|| str.charAt(i)=='i'|| str.charAt(i)=='o' || str.charAt(i)=='u') {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         String str="racecar";
         String path= "WNEENESENNN";
         String str1="pineapple", str2="papaya";
         String strCompr="aaabbccccddd";
+        String vowels="abcdefghijklmnopqrstuvwxyz";
 
         //Ma'am way
         String fruits[]= {"apple","mango","banana"};
@@ -90,7 +101,8 @@ public class PracticeStrings {
             }
         }
 
-        System.out.println("Compressed string is "+ strCompression(strCompr));
+        System.out.println("Number of times vowels occurs is " + countVowels(vowels));
+        //System.out.println("Compressed string is "+ strCompression(strCompr));
         //System.out.println("Largest string is "+largestString(str1, str2));
         //System.out.println(str.substring(2, 6));
         //System.out.println("Substring is "+subString(str, 2, 6));
