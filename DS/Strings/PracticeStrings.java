@@ -57,10 +57,29 @@ public class PracticeStrings {
         }
         return "Blank value";
     }
+
+    public static String strCompression(String str) {
+        StringBuilder sb=new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            Integer count=1;
+            while (i<str.length()-1 && str.charAt(i)==str.charAt(i+1)) {
+                count++;
+                i++;
+            }
+            sb.append(str.charAt(i));
+            if (count>1) {
+                sb.append(count.toString());
+            }
+        }
+        return sb.toString();
+
+    }
+
     public static void main(String[] args) {
         String str="racecar";
         String path= "WNEENESENNN";
         String str1="pineapple", str2="papaya";
+        String strCompr="aaabbccccddd";
 
         //Ma'am way
         String fruits[]= {"apple","mango","banana"};
@@ -71,7 +90,7 @@ public class PracticeStrings {
             }
         }
 
-        System.out.println(largest);
+        System.out.println("Compressed string is "+ strCompression(strCompr));
         //System.out.println("Largest string is "+largestString(str1, str2));
         //System.out.println(str.substring(2, 6));
         //System.out.println("Substring is "+subString(str, 2, 6));
