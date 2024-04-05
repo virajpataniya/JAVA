@@ -41,6 +41,7 @@ public class PracticeSort {
         }
     }
 
+    //Pick an element (from unsorted part) & placed in right pos in sorted part 
     public static void insertionSort(int number[]){
         for (int i = 1; i < number.length; i++) {
             int curr=number[i];
