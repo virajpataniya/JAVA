@@ -47,11 +47,28 @@ public class NewPractice {
         return -1;
     }
 
+    private static void reverseArray(int[] num){
+        int first=0,last=num.length-1;
+        while (first<last) {
+          // swap
+          int temp=num[last];
+          num[last]=num[first];
+          num[first]=temp;
+          first++;
+          last--;
+        }
+    }
+
     public static void main(String[] args) {
         int key=5;
         int[] test = {1,5,3,9,7};
         int[] binArr= {1,3,5,7,9};
-        System.out.println("Index for key in Binary search is "+ binarySearch(binArr,key));
+        reverseArray(binArr);
+        for (int i = 0; i < binArr.length; i++) {
+            System.out.print(binArr[i]+ " ");   
+        }
+        System.out.println();
+        //System.out.println("Index for key in Binary search is "+ binarySearch(binArr,key));
         //System.out.println("Largest in Array is "+largestInArray(test));
     }
 
