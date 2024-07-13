@@ -58,16 +58,37 @@ public class NewPractice {
           last--;
         }
     }
+//arr= 1,2,3,1,4
+    static void unrepetitiveNumbersIndex(int[] arr){
+        boolean found = false;
+        int i;
+        for ( i = 0; i < arr.length; i++) {
+            found = false;
+            for (int j = 0; j < arr.length; j++) {
+                //System.out.println("arr[" + i + "]"+ arr[i] + " arr[" + j + "]"+ arr[j]);
+                if (i!=j && arr[i]==arr[j]) {
+                    //System.out.println("found");
+                    found=true;
+                    break;
+                }
+            }
+            if (!found) {
+                System.out.print(" "+i);
+            }
+        }
+    }
 
     public static void main(String[] args) {
         int key=5;
         int[] test = {1,5,3,9,7};
         int[] binArr= {1,3,5,7,9};
-        reverseArray(binArr);
-        for (int i = 0; i < binArr.length; i++) {
-            System.out.print(binArr[i]+ " ");   
-        }
-        System.out.println();
+        int[] repeat= {1,2,3,1,4};
+        unrepetitiveNumbersIndex(repeat);
+        //reverseArray(binArr);
+        // for (int i = 0; i < binArr.length; i++) {
+        //     System.out.print(binArr[i]+ " ");   
+        // }
+        //System.out.println();
         //System.out.println("Index for key in Binary search is "+ binarySearch(binArr,key));
         //System.out.println("Largest in Array is "+largestInArray(test));
     }
