@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class DailyQues {
 
     static int maxProduct(int[] subArr) {
@@ -33,7 +35,14 @@ public class DailyQues {
         return max1 * max2;
     }
 
-    public static void main(String[] args) {
 
+    static void findKthLargestElement(int[] arr,int k){
+        Arrays.sort(arr);
+        System.out.println("value is "+arr[arr.length-k]);
+    }
+
+    public static void main(String[] args) {
+        int[] arrKth={4,2,1,3,5};
+        findKthLargestElement(arrKth, 2);
     }
 }
