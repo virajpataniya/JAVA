@@ -1,7 +1,7 @@
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import android.os.Handler;
-import android.os.HandlerThread;
+//import android.os.Handler;
+//import android.os.HandlerThread;
 
 // 1. Using the Thread Class
 class MyThread extends Thread {
@@ -20,7 +20,7 @@ class MyRunnable implements Runnable {
 }
 
 // 3. Using Handler and HandlerThread
-class MyHandlerThread {
+/*class MyHandlerThread {
     private Handler handler;
 
     public MyHandlerThread() {
@@ -37,7 +37,7 @@ class MyHandlerThread {
             }
         });
     }
-}
+}*/
 
 // 4. Using ExecutorService
 class MyExecutorService {
@@ -72,8 +72,8 @@ public class Main {
         threadWithRunnable.start();
 
         // 3. Using Handler and HandlerThread
-        MyHandlerThread myHandlerThread = new MyHandlerThread();
-        myHandlerThread.postTask();
+        /*MyHandlerThread myHandlerThread = new MyHandlerThread();
+        myHandlerThread.postTask();*/
 
         // 4. Using ExecutorService
         MyExecutorService myExecutorService = new MyExecutorService();
