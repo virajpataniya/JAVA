@@ -13,10 +13,12 @@ public class LinkedList {
     }
     public static Node head;
     public static Node tail;
+    public static int size;
 
     public void addFirst(int data){
         // 1. Create Node
         Node newNode= new Node(data);
+        size++;
         if (head==null) {
             head=tail=newNode;
             return;
@@ -30,6 +32,7 @@ public class LinkedList {
     public void addLast(int data){
         // 1. Create newNode
         Node newNode = new Node(data);
+        size++;
         if (head==null) {
             head=tail=newNode;
             return;
@@ -113,6 +116,7 @@ public class LinkedList {
         ll.reverse(); //5->4->3->2->1->null
         ll.print();
 
+        System.out.println(ll.size);
         //System.out.println(ll.itrSearch(2));
         //System.out.println(ll.itrSearch(7));
 
