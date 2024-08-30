@@ -28,6 +28,19 @@ public class LinkedList {
         // 3. Changing newNode to head
         head=newNode;
     }
+    
+    // Utility method to add a new node at the end of the list
+    public void add(int idx,int newData) {
+        Node newNode = new Node(newData);
+        Node temp=head;
+        int i=0;
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        newNode.next=temp.next;
+    }
 
     public void addLast(int data){
         // 1. Create newNode
