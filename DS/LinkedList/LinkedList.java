@@ -29,17 +29,23 @@ public class LinkedList {
         head=newNode;
     }
     
-    // Utility method to add a new node at the end of the list
+    // Utility method to add a new node at middle of list
     public void add(int idx,int newData) {
+        if (idx==0) {
+            addFirst(newData);
+            return;
+        }
         Node newNode = new Node(newData);
         Node temp=head;
         int i=0;
-        if (head == null) {
-            head = newNode;
-            return;
+        while (i<idx-1) {
+            temp=temp.next;
+            i++;
         }
 
+        //i=idx-1;temp -> prev
         newNode.next=temp.next;
+        temp.next=newNode;
     }
 
     public void addLast(int data){
@@ -124,6 +130,7 @@ public class LinkedList {
         ll.addFirst(1);
         ll.addLast(3);
         ll.addLast(4);
+        ll.add(2, 7);
         //print
         ll.print(); //1->2->3->4->5->null
         ll.reverse(); //5->4->3->2->1->null
