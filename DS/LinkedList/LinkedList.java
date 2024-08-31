@@ -68,11 +68,36 @@ public class LinkedList {
             return Integer.MIN_VALUE;
         } else if (size==1) {
             int val=head.data;
-            head=head.next;
+            head=tail=null;
+            size=0;
             return val;
         }
         int val=head.data;
         head=head.next;
+        size--;
+        return val;
+    }
+
+    public int removeLast(){
+        if (size==0) {
+            System.out.println("Linkedlist is empty");
+            return Integer.MIN_VALUE;
+        } else if (size==1) {
+            int val=head.data;
+            head=tail=null;
+            size=0;
+            return val;
+        }
+        //Prev: i=size-2
+        Node prev=head;
+        for (int i = 0; i < size-2; i++) {
+           prev=prev.next;
+        }
+        //We are standing at 2nd last index
+        int val=prev.next.data;//tail data
+        prev.next=null;
+        tail=prev;
+        size--;
         return val;
     }
 
@@ -149,6 +174,7 @@ public class LinkedList {
         ll.print(); //1->2->3->4->5->null
         //ll.reverse(); //5->4->3->2->1->null
         ll.removeFirst();
+        ll.removeLast();
         ll.print();
 
         //System.out.println(ll.size);
