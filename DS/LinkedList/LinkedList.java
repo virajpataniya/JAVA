@@ -115,9 +115,16 @@ public class LinkedList {
         }
 
         //sz-n
-        while (i<it) {
-            
+        int i=1;
+        int indexToFind=sz-n;
+        Node prev=head;
+        while (i<indexToFind) {
+            prev=prev.next;
+            i++;
         }
+
+        prev.next=prev.next.next;//We point address to new Node ex; From a-b-c to a-c 
+        return;
     }
 
     public void print(){
@@ -188,13 +195,15 @@ public class LinkedList {
         ll.addFirst(1);
         ll.addLast(3);
         ll.addLast(4);
-        ll.add(2, 7);
+        ll.add(2, 3);
         //print
         ll.print(); //1->2->3->4->5->null
         //ll.reverse(); //5->4->3->2->1->null
-        ll.removeFirst();
+        /*ll.removeFirst();
         ll.removeLast();
-        ll.print();
+        ll.print();*/
+        ll.deleteNthfromEnd(3);
+        ll.print(); //1->2->4->5->null
 
         //System.out.println(ll.size);
         //System.out.println(ll.itrSearch(2));
