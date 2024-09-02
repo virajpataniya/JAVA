@@ -101,6 +101,25 @@ public class LinkedList {
         return val;
     }
 
+    public void deleteNthfromEnd(int n){
+        //calculate size
+        int sz=0;
+        Node temp=head;
+        while (temp!=null) {
+            temp=temp.next;
+            sz++;
+        }
+        if (n==sz) {
+            head=head.next;//remove first
+            return;
+        }
+
+        //sz-n
+        while (i<it) {
+            
+        }
+    }
+
     public void print(){
         if (head==null) {
             System.out.println("LL is empty ");
