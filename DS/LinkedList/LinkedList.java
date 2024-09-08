@@ -189,6 +189,19 @@ public class LinkedList {
          head=prev;
     }
 
+    public boolean isCycle(){
+        Node slow=head;
+        Node fast=head;
+        while (fast!=null&&fast.next!=null) {
+            slow=slow.next;
+            fast=fast.next.next;
+            if (slow==fast) {
+                return true;
+            }
+        }
+        return false; //cycle not exist
+    }
+
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
         ll.addFirst(2);
