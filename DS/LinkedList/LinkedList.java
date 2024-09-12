@@ -202,6 +202,32 @@ public class LinkedList {
         return false; //cycle not exist
     }
 
+    private Node getMid(Node head){
+        Node slow=head;
+        Node fast=head.next;
+
+        while (fast!=null && fast.next!=null) {
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow; //mid node
+    }
+
+    public Node mergeSort(Node head){
+
+        //find mid
+        Node mid=getMid();
+        //Left & right MS
+        Node rightHead=mid.next;
+        mid.next=null;
+        Node newLeft=mergeSort(head);
+        Node newRight=mergeSort(rightHead);
+
+        //merge
+        return merge(newLeft,newRight);
+
+    }
+
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
         ll.addFirst(2);
