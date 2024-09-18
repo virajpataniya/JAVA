@@ -213,10 +213,40 @@ public class LinkedList {
         return slow; //mid node
     }
 
+    private Node merge(Node head1,Node head2){
+        Node mergedLL=new Node(-1);
+        Node temp=mergedLL;
+        while (head1!=null&&head2!=null) {
+            if (head1.data<=head2.data) {
+                temp.next=head1;
+                head1=head1.next;
+                temp=temp.next;
+            } else{
+                temp.next=head2;
+                head2=head2.next;
+                temp=temp.next;
+            }
+        }
+        while (head1!=null) {
+            temp.next=head1;
+            head1=head1.next;
+            temp=temp.next;
+        }
+        while (head2!=null) {
+            temp.next=head2;
+            head2=head2.next;
+            temp=temp.next;
+        }
+        return mergedLL.next;
+    }
+
     public Node mergeSort(Node head){
+        if (head==null||head.next!=null) {
+            return head;
+        }
 
         //find mid
-        Node mid=getMid();
+        Node mid=getMid(head);
         //Left & right MS
         Node rightHead=mid.next;
         mid.next=null;
@@ -241,18 +271,19 @@ public class LinkedList {
         /*ll.removeFirst();
         ll.removeLast();
         ll.print();*/
-        ll.deleteNthfromEnd(3);
-        ll.print(); //1->2->4->5->null
+        //ll.deleteNthfromEnd(3);
+        //ll.print(); //1->2->4->5->null
 
         //System.out.println(ll.size);
         //System.out.println(ll.itrSearch(2));
         //System.out.println(ll.itrSearch(7));
 
         //System.out.println(ll.recSearch(3));
-        head=new Node(1);
+        /*head=new Node(1);
         head.next=new Node(2);
         head.next.next=new Node(3);
-        head.next.next.next=head;
+        head.next.next.next=head;*/
+        ll.head=ll.mergeSort(ll.head)
         System.out.println();
     }
 }
