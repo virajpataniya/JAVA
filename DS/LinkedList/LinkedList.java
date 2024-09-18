@@ -241,7 +241,7 @@ public class LinkedList {
     }
 
     public Node mergeSort(Node head){
-        if (head==null||head.next!=null) {
+        if (head==null||head.next==null) {
             return head;
         }
 
@@ -283,7 +283,7 @@ public class LinkedList {
         head.next=new Node(2);
         head.next.next=new Node(3);
         head.next.next.next=head;*/
-        ll.head=ll.mergeSort(ll.head)
+        ll.head=ll.mergeSort(ll.head);
         System.out.println();
     }
 }
