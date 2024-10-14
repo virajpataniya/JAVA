@@ -78,6 +78,16 @@ public class NewPractice {
         }
     }
 
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums); // Sort the array
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true; // Found a duplicate
+            }
+        }
+        return false; //No duplicates
+    } 
+
     public static void main(String[] args) {
         int key=5;
         int[] test = {1,5,3,9,7};
