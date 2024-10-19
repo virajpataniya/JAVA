@@ -86,21 +86,29 @@ public class NewPractice {
             }
         }
         return false; //No duplicates
-    } 
+    }
+    
+    //Chocolate distribution problem
+    public static int chocolateProblem(int[] arr,int m){
+        Arrays.sort(arr);
+        int minimal=Integer.MAX_VALUE;
+        for (int i = 0; i+m-1 < arr.length; i++) {
+                int diff=arr[i+m-1]-arr[i];
+                if (diff<minimal) {
+                    minimal=diff;
+                }
+        }
+        return minimal;
+    }
 
     public static void main(String[] args) {
         int key=5;
         int[] test = {1,5,3,9,7};
         int[] binArr= {1,3,5,7,9};
         int[] repeat= {1,2,3,1,4};
-        unrepetitiveNumbersIndex(repeat);
-        //reverseArray(binArr);
-        // for (int i = 0; i < binArr.length; i++) {
-        //     System.out.print(binArr[i]+ " ");   
-        // }
-        //System.out.println();
-        //System.out.println("Index for key in Binary search is "+ binarySearch(binArr,key));
-        //System.out.println("Largest in Array is "+largestInArray(test));
+        int[] arr = {7, 3, 2, 4, 9, 12, 56};
+        int m=3;
+        System.out.println("Minimum difference is "+chocolateProblem(arr,m));
     }
 
 
