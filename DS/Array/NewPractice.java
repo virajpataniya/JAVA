@@ -101,6 +101,39 @@ public class NewPractice {
         return minimal;
     }
 
+    public static int rotatedSortedArray(int[] rotated, int target){
+        int left = 0;
+        int right = rotated.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+    
+            // Check if the target is found
+            if (rotated[mid] == target) {
+                return mid;
+            }
+    
+            // Determine which part is sorted
+            if (rotated[left] <= rotated[mid]) {
+                // Left part is sorted
+                if (target >= rotated[left] && target < rotated[mid]) {
+                    right = mid - 1; // target is in the left part
+                } else {
+                    left = mid + 1; // target is in the right part
+                }
+            } else {
+                // Right part is sorted
+                if (target > rotated[mid] && target <= rotated[right]) {
+                    left = mid + 1; // target is in the right part
+                } else {
+                    right = mid - 1; // target is in the left part
+                }
+            }
+        }
+    
+        // If we exit the loop, the target is not found
+        return -1;    
+    }
+
     public static void main(String[] args) {
         int key=5;
         int[] test = {1,5,3,9,7};
@@ -108,7 +141,9 @@ public class NewPractice {
         int[] repeat= {1,2,3,1,4};
         int[] arr = {7, 3, 2, 4, 9, 12, 56};
         int m=3;
-        System.out.println("Minimum difference is "+chocolateProblem(arr,m));
+        int[] rotated= {4,5,6,0,1,2};
+        int target=0;
+        System.out.println("Target index is "+rotatedSortedArray(rotated,target));
     }
 
 
