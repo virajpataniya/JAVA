@@ -1,0 +1,16 @@
+# Java / Kotlin build outputs
+*.class
+*.jar
+out/
+bin/
+
+# IDE / system
+.rsrc/
+.idea/
+*.iml
+
+# Kotlin
+.kotlin/
+
+# Java compiled files
+*.class
